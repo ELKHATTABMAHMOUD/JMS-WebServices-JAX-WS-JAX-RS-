@@ -15,10 +15,10 @@ public class ClientQ3 {
 			Client client = ClientBuilder.newClient(cliConf);
 			WebTarget webTarg = client.target("http://localhost:8080/tp2Q3");
 			
-			String name="mahmoud";
+			String name="third user";
 			String number ="3";
-			Form form = new Form();
 			
+			Form form = new Form();
 			form.param("number", number);
 			form.param("name", name);
 			

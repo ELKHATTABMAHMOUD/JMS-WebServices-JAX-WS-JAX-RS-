@@ -30,8 +30,7 @@ public class Annuaire{
 	
 	@Path("/addContact")
 	@POST
-	@Produces("text/html")
-	public String addContact(@FormParam("name")String name, @FormParam("numero") String numero){
+	public String addContact(@FormParam("name")String name, @FormParam("number") String numero){
 		//TODO:  A compléter 
 		for(Contact contact : this.carnet.getContacts()){
 			if(contact.getNom().equals(name))
