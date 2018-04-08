@@ -1,9 +1,6 @@
 # Compiled class file
 *.class
 
-# CSharp files 
-*.cs
-
 # Log file
 *.log
 
