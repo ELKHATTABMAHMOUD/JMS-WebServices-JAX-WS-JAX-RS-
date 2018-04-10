@@ -37,7 +37,7 @@ public class ClientQ5 {
 			
 			
 			// Returnd Contact Number
-			System.out.println(" Voir le contact ajouté ici : "+contactNumber);
+			System.out.println("le numéro du contact récemment ajouté est : "+contactNumber);
 			
 			
 		}
