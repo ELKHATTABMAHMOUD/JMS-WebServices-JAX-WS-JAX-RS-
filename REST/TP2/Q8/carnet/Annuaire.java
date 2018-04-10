@@ -96,10 +96,12 @@ public class Annuaire{
 	@Produces("text/plain")
 	@Consumes("text/plain")
 	public String updateContact(@PathParam("name")String name){
+		
+		
 		for(Contact contact : this.carnet.getContacts()){
-			if(contact.getNom().equals(name)){
-				this.carnet.remove(contact.(contact));
-				return "Contact ... supprimé");
+			if(contact.getNom().equalsIgnoreCase(name)){
+				this.carnet.getContacts().remove(contact);
+				return "Contact ... supprimé";
 			}
 		}
 		return "Contact ...introuvable !";
