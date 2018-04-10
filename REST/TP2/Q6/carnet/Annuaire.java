@@ -54,4 +54,24 @@ public class Annuaire{
  
 	}
 	
+	@Path("/newContact")
+	@POST
+	@Produces("text/plain")
+	@Consumes(MediaType.APPLICATION_XML)
+	public String newContact(Contact newContact){
+		
+		for(Contact contact : this.carnet.getContacts()){
+			if(contact.getNom().equals(newContact.getNom()))
+				return "Contact ... déjà existant" ;
+		}
+		if(!newContact.getNom().equals("") && !newContact.getNumero().equals("")){
+			carnet.getContacts().add(newContact);			
+			return "ajout";
+		}
+
+		return "Vous n'avez pas renseigné numero ou nom." ;
+ 
+	}
+	
+	
 }
