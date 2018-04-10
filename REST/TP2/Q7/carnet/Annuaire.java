@@ -77,16 +77,16 @@ public class Annuaire{
 	@Produces("text/plain")
 	@Consumes(MediaType.APPLICATION_XML)
 	public Response updateContact(Contact newContact){
-
 		if(carnet.getContacts().size() == 0){
 			return Response.noContent().build() ;
 		}
 		for(Contact contact : this.carnet.getContacts()){
-			if(contact.getNom().equals(newContact.getNom()))
+			System.out.println(contact.getNom()+" :: "+newContact.getNom());
+			if(contact.getNom().equals(newContact.getNom())){
 				contact.setNumero(newContact.getNumero());
 				return Response.created(null).entity("Contact ... modifié").build() ;
+			}
 		}
-
 		return Response.noContent().build();
  
 	}
